@@ -1,0 +1,61 @@
+!!!
+%html
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title= current_page.data.title || ''
+    %meta{name: 'description', content: ''}
+    %meta{name: 'author', content: ''}
+
+    :plain
+      <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+      <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+    = stylesheet_link_tag "styles", :media => "all"
+
+  %body{ 'class' => current_page.data.page_class }
+    %main
+      %header#header-primary
+        %nav.navbar.navbar-default.navbar-fixed-top
+          .container
+            / Brand and toggle get grouped for better mobile display
+            .navbar-header
+              %button.navbar-toggle.collapsed{"data-target" => "#top-nav-collapse", "data-toggle" => "collapse", :type => "button"}
+                %span.sr-only Toggle navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              %a.navbar-brand{:href => "index.html"} 
+                Újpest
+                %small Ahol szeretünk élni
+            
+            / Collect the nav links, forms, and other content for toggling
+            .collapse.navbar-collapse#top-nav-collapse
+              %ul.nav.navbar-nav.navbar-left
+
+                %li
+                  %a{href: '#'} Hírek
+                %li
+                  %a{href: '#'} Kultúra
+                %li
+                  %a{href: '#'} Újpest TV
+                %li
+                  %a{href: '#'} Apróhirdetés
+                %li
+                  %a{href: '#'} Önkormányzat
+                %li
+                  %a{href: '#'} Városunkról
+              .col-sm-3.col-md-3.pull-right
+                %form.navbar-form{:role => "search"}
+                  .input-group
+                    %input#srch-term.form-control{:name => "srch-term", :placeholder => "Search", :type => "text"}/
+                    .input-group-btn
+                      %button.btn.btn-default{:type => "submit"}
+                        %i.glyphicon.glyphicon-search
+
+      = yield
+    / Placed at the end of the document so the pages load faster
+    = javascript_include_tag "all"
