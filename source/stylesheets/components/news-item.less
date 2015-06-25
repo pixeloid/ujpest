@@ -1,0 +1,127 @@
+.news-item {
+    position: relative;
+    margin-top: 25px;
+}
+
+.news-item--split{
+    .make-row();
+}
+
+
+.news-item__title {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin: -1em 0 0 0;
+    background: #fff;
+    margin-top: 0.2em;
+    padding-right: 1em;
+
+    .news-item--noimage &{
+        margin-top: 1em;
+    }
+
+    .news-item--split &{
+        margin: 20px 0 5px 0;
+    }
+
+    .news-item--hero &{
+        color: @brand-primary;
+        line-height: 1.1;
+        font-size: @font-size-h1;
+        margin-right: 10%;
+        margin-bottom: 10px;
+    }
+}
+
+.news-item__text{
+    p{
+        .news-item--hero &{
+            font-size: @font-size-large;
+        }
+    }
+    
+    .news-item--split &{
+        .make-md-column(6);
+
+        @media (min-width: @screen-md-min) {
+           padding-left: 0;
+        }
+    }
+    .news-item--inverse &{
+        .make-md-column(6);
+        .make-md-column-pull(6);
+
+        @media (min-width: @screen-md-min) {
+            padding-right: 0;
+        }
+    }
+}
+
+
+.news-item__meta{   
+
+
+    font-family: @font-family-slab;
+    font-weight: bold;
+    font-size: 13px;
+    background: #ffffff;
+    padding-bottom: 0.3em;
+    padding-right: 0.8em;
+
+    @media (min-width: @screen-sm-min) {
+        position: absolute;
+        top: 0;
+    };
+
+    .news-item--split &{
+        left: 0;
+    }
+    .news-item--inverse &{
+        left: @grid-gutter-width / 2;
+    }
+}
+
+
+
+
+.news-item__date {
+    color: @gray-light;
+}
+
+.news-item__category {
+    @_color:  @brand-primary;
+    color: @_color;
+    text-transform: uppercase;
+    margin-left: 6px;
+    &:before{
+        content: " ";
+        display: inline-block;
+        position: relative;
+        vertical-align: baseline;
+        height: 10px;
+        width: 5px;
+        left: -6px;
+        top: 0px;
+        background: @brand-primary;
+    }
+}     
+
+
+
+.news-item__image {
+    img{
+        .img-responsive;
+
+        .news-item--noimage &{
+            display: none;
+        }
+
+    }
+    .news-item--split &{
+        .make-md-column(6);
+    }
+    .news-item--inverse &{
+        .make-md-column-push(6);
+    }
+}
