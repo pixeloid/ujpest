@@ -1,4 +1,16 @@
-<article class='news-item {{modifier}}'>
+---
+colors: 
+- purple
+- blue-light
+- orange
+- magenta
+
+color: 2
+---
+
+{{ colors.[color] }}
+
+<article class='news-item {{modifier}} news-item--color- '>
   
     <div class='news-item__image'>
       <img src="img/samples/news/image-18.png" width=''>

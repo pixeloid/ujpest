@@ -26,15 +26,16 @@ main{
 	.make-sm-column(8);
 	.make-md-column(9);
 	border-right: 1px solid @gray-lighter;
+	padding-bottom: @grid-gutter-width;
+
+	> .bleed{
+		margin-left: -@grid-gutter-width;
+		margin-right: -(@grid-gutter-width / 2);
+	}
 }
 #content-secondary{
 
 	.make-sm-column(4);
 	.make-md-column(3);
-
-	.inner{
-		margin-right: -@grid-gutter-width;
-		margin-left: -@grid-gutter-width / 2;
-	}
-
+	padding-bottom: @grid-gutter-width;
 }
