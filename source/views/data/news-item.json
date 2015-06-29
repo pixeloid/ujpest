@@ -1,0 +1,19 @@
+{
+	"hero":{
+		"modifier" : "news-item--hero"
+	},
+
+	"split":{
+		"modifier" : "news-item--split"
+	},
+
+	"split-inverse":{
+		"modifier" : "news-item--split news-item--inverse"
+	},
+
+	"noimage":{
+		"modifier" : "news-item--noimage"
+	}
+
+
+}
