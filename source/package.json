@@ -13,7 +13,6 @@
   },
   "devDependencies": {
     "assemble-handlebars": "^0.3.0",
-    "grunt-assemble": "^0.3.1",
     "grunt-contrib-connect": "^0.10.1",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-less": "^0.12.0",
