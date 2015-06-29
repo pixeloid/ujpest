@@ -1,0 +1,48 @@
+@import "widget-major";
+@import "widget-event-list";
+@import "widget-magazine-download";
+@import "widget-newsletter-subscribe";
+@import "widget-thumb-links";
+@import "widget-poll";
+
+
+.widget{
+	margin-right: -@grid-gutter-width;
+	margin-left: -(@grid-gutter-width / 2);
+	border-bottom: 1px solid @gray-lighter;
+	padding-bottom: @grid-gutter-width;
+
+	.btn{
+		.button-variant(#fff, @gray, @gray);
+		font-family: @font-family-slab;
+		text-transform: uppercase;
+		font-size: 13px;
+		padding: 8px 15px;
+		float: right;
+
+		&:after{
+			content: " ";
+			display: block;
+			float: right;
+			margin-top: 2px;
+			margin-left: 10px;
+			.sprite-trend-arrow_down_small_blue;
+		}
+
+	}
+
+}
+.widget__content{
+	margin-right: @grid-gutter-width;
+	margin-left: (@grid-gutter-width / 2);
+	.clearfix;
+}
+.widget__title{
+	background: @brand-primary;
+	color: #fff;
+	padding:  10px (@grid-gutter-width / 2);
+	line-height: 1em;
+	margin-top: 0;
+	margin-bottom: 1em;
+	display: inline-block;
+}

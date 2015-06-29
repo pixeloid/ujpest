@@ -2,9 +2,11 @@
 page_class: page-home
 ---
 
-<div class='container'>
+<div class=''>
   <div class='row'>
-    <section id='content-primary'>
+    <section class='l_content-primary'>
+
+
       <div class='top-news'>
         <div class='top-news__primary'>
           {{> news-item news-item.hero}}
@@ -27,9 +29,9 @@ page_class: page-home
         </div>
       </div>
 
-      <div class="bleed">
+      <div class="l_content-primary__bleed">
         <div class='banner banner--728x90'>
-          Hirdetes
+          <img src="img/samples/banner728x90.png">
         </div>
       </div>
 
@@ -51,14 +53,34 @@ page_class: page-home
         </div>
       </div>
 
+      <div class="l_content-primary__bleed">
+        <div class='banner banner--300x250'>
+          <img src="img/samples/banner300x250.png">
+        </div>
+      </div>
+
+      <div class="l_content-primary__bleed">
+        <h2 class="category-title category-title__cult">
+          Kultúra
+        </h2>
+      </div>
 
 
 
     </section>
-    <aside id='content-secondary'>
-      {{> news-item news-item}}
-      {{> news-item news-item.noimage}}
-      {{> news-item news-item}}
+    <aside class='l_content-secondary'>
+      
+      {{> widget-major}}
+      <div class="l_content-secondary__bleed">
+        <div class='banner banner--300x250'>
+          <img src="img/samples/banner300x250.png">
+        </div>
+      </div>
+      {{> widget-poll}}
+      {{> widget-newsletter-subscribe}}
+      {{> widget-magazine-download}}
+      {{> widget-event-list}}
+      {{> widget-thumb-links}}
     </aside>
   </div>
 </div>

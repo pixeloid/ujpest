@@ -1,0 +1,49 @@
+.widget--major{
+
+	background: #f1eaf0;
+
+	.widget__title{
+		display: block;
+		height: 144px;
+		padding-right: 30%;
+		background: url(../img/bg_polgarmesteri_ajanlo.png);
+		padding-top: 20px;
+	}
+
+	h4{
+		margin-top: -70px;
+		color: @brand-primary;
+		font-size: 16px;
+		line-height: 1.2em;
+		height: 40px;
+		small{
+			font-family: @font-family-sans-serif;
+			text-transform: none;
+			color: @gray;
+			font-weight: 200;
+			font-size: 14px;
+		}
+	}
+
+	ul{
+
+		.list-unstyled;
+		margin:0 ;
+		li{
+			border-bottom: 1px solid rgba(103, 100, 103, 0.17);
+			a{
+				display: block;
+				padding: 8px 0;
+				color: @text-color;
+				&:after{
+					content: " ";
+					display: block;
+					float: right;
+					margin-top: 4px;
+					.sprite-trend-arrow_right_small_purple;
+				}
+			}
+		}
+	}
+	
+}

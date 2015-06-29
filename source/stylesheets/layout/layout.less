@@ -13,29 +13,36 @@ main{
 	}
 	@media (min-width: @screen-md-min) {
 	  width: @container-md + 2 * @grid-gutter-width;
-	  padding: 0 @grid-gutter-width;
+	  padding: 0 (@grid-gutter-width / 2);
 	}
 	@media (min-width: @screen-lg-min) {
 	  width: @container-lg + (@grid-gutter-width);
-	  padding: 0 @grid-gutter-width / 2;
+	  padding: 0 @grid-gutter-width;
 	}
 }
 
 
-#content-primary{
+.l_content-primary{
 	.make-sm-column(8);
 	.make-md-column(9);
+	padding-left: @grid-gutter-width / 2;
 	border-right: 1px solid @gray-lighter;
 	padding-bottom: @grid-gutter-width;
 
-	> .bleed{
+	.l_content-primary__bleed{
+
 		margin-left: -@grid-gutter-width;
+
 		margin-right: -(@grid-gutter-width / 2);
 	}
 }
-#content-secondary{
+
+.l_content-secondary{
 
 	.make-sm-column(4);
 	.make-md-column(3);
+	padding-right: @grid-gutter-width / 2;
 	padding-bottom: @grid-gutter-width;
+
+
 }

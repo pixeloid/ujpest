@@ -191,7 +191,7 @@ module.exports = function (grunt) {
             sprite: {
                 options: {
                     'sprite-namespace': 'trend',
-                    less: 'less/common'
+                    less: 'stylesheets/common'
                 },
                 src: ['sprite'],
                 dest: build_dir + 'img'
