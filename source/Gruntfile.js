@@ -12,6 +12,7 @@
 
 var ProjectPath = 'ujpest-portal.dev.trendency.hu'; // {PROJEKT_NAME} - le kell cserélni az aktuális projekt path-ra
 var build_dir = '../build/';
+var remoteDir = 'sitebuild/pixeloid/';
 
 module.exports = function (grunt) {
 
@@ -82,58 +83,56 @@ module.exports = function (grunt) {
         },
 
         concat: {
-            dev: {
-                vendor: {
-                    src: [
-                        'vendor/jquery-2.1.1/jquery-2.1.1.js',
+            vendor: {
+                src: [
+                    'vendor/jquery-2.1.1/jquery-2.1.1.js',
 
-                        //'vendor/owl.carousel.2.0.0-beta.2.4/owl.carousel.js',
+                    //'vendor/owl.carousel.2.0.0-beta.2.4/owl.carousel.js',
 
-                        'vendor/bootstrap-3.2.0/js/transition.js',
-                        'vendor/bootstrap-3.2.0/js/alert.js',
-                        'vendor/bootstrap-3.2.0/js/button.js',
-                        'vendor/bootstrap-3.2.0/js/collapse.js',
-                        'vendor/bootstrap-3.2.0/js/modal.js',
-                        'vendor/bootstrap-3.2.0/js/collapse.js',
-                        'vendor/bootstrap-3.2.0/js/dropdown.js',
-                        'vendor/bootstrap-3.2.0/js/tooltip.js',
-                        'vendor/bootstrap-3.2.0/js/popover.js',
-                        'vendor/bootstrap-3.2.0/js/tab.js',
+                    'vendor/bootstrap-3.2.0/js/transition.js',
+                    'vendor/bootstrap-3.2.0/js/alert.js',
+                    'vendor/bootstrap-3.2.0/js/button.js',
+                    'vendor/bootstrap-3.2.0/js/collapse.js',
+                    'vendor/bootstrap-3.2.0/js/modal.js',
+                    'vendor/bootstrap-3.2.0/js/collapse.js',
+                    'vendor/bootstrap-3.2.0/js/dropdown.js',
+                    'vendor/bootstrap-3.2.0/js/tooltip.js',
+                    'vendor/bootstrap-3.2.0/js/popover.js',
+                    'vendor/bootstrap-3.2.0/js/tab.js',
 
-                        'vendor/icheck-1.0.2/icheck.js',
-                        'vendor/bootstrap-select/js/bootstrap-select.js',
+                    'vendor/icheck-1.0.2/icheck.js',
+                    'vendor/bootstrap-select/js/bootstrap-select.js',
 
-                        'vendor/modernizr/modernizr.js',
+                    'vendor/modernizr/modernizr.js',
 
-                        'vendor/mmenu/js/jquery.mmenu.min.all.js',
+                    'vendor/mmenu/js/jquery.mmenu.min.all.js',
 
-                        'vendor/jquery.royalslider.js',
-                        'vendor/swiper.jquery.js',
-                        'vendor/star-rating.js',
-                        'vendor/jquery.menu-aim.js',
-                        'vendor/jquery.zoom.js',
-                        'vendor/jquery.prodigal.js'
-                    ],
+                    'vendor/jquery.royalslider.js',
+                    'vendor/swiper.jquery.js',
+                    'vendor/star-rating.js',
+                    'vendor/jquery.menu-aim.js',
+                    'vendor/jquery.zoom.js',
+                    'vendor/jquery.prodigal.js'
+                ],
 
-                    dest: build_dir + 'js/vendor.js'
-                },
-                js: {
-                    src: [
-                        'js/widgets/*',
-                        'js/plugins/*',
-                        'js/main.js'
-                    ],
-                    dest: build_dir + 'js/main.js'
-                },
+                dest: build_dir + 'js/vendor.js'
+            },
+            js: {
+                src: [
+                    'js/widgets/*',
+                    'js/plugins/*',
+                    'js/main.js'
+                ],
+                dest: build_dir + 'js/main.js'
+            },
 
-                css: {
-                    src: [
-                        //'vendor/animatecss/animate.css',
-                        'vendor/mmenu/css/jquery.mmenu.all.css'
-                        //'vendor/owl.carousel.2.0.0-beta.2.4/assets/owl.carousel.css'
-                    ],
-                    dest: build_dir + 'css/vendor.css'
-                }
+            css: {
+                src: [
+                    //'vendor/animatecss/animate.css',
+                    'vendor/mmenu/css/jquery.mmenu.all.css'
+                    //'vendor/owl.carousel.2.0.0-beta.2.4/assets/owl.carousel.css'
+                ],
+                dest: build_dir + 'css/vendor.css'
             }
         },
 
@@ -147,6 +146,15 @@ module.exports = function (grunt) {
         },
 
         ftpush: {
+            html: {
+                auth: {
+                    host: 'projekt.dev.trendency.hu',
+                    port: 21,
+                    authKey: 'key1'
+                },
+                src: build_dir + '/',
+                dest: '/' + ProjectPath + '/' + remoteDir
+            },
             style: {
                 auth: {
                     host: 'projekt.dev.trendency.hu',
@@ -154,7 +162,7 @@ module.exports = function (grunt) {
                     authKey: 'key1'
                 },
                 src: build_dir + '/css',
-                dest: '/' + ProjectPath + '/layout/css'
+                dest: '/' + ProjectPath + '/' + remoteDir + 'css'
             },
 
             scripts: {
@@ -164,17 +172,17 @@ module.exports = function (grunt) {
                     authKey: 'key1'
                 },
                 src: build_dir + 'js',
-                dest: '/' + ProjectPath + '/layout/js'
+                dest: '/' + ProjectPath + '/' + remoteDir + 'js'
             },
 
-            sprite: {
+            image: {
                 auth: {
                     host: 'projekt.dev.trendency.hu',
                     port: 21,
                     authKey: 'key1'
                 },
                 src: build_dir + 'img',
-                dest: '/' + ProjectPath + '/layout/img'
+                dest: '/' + ProjectPath + '/' + remoteDir + 'img'
             }
         },
 
@@ -268,11 +276,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-assemble');
 
     // Default task(s).
-    grunt.registerTask('default', ['copy', 'jshint', 'less:dev', 'assemble', 'concat:dev'/*, 'ftpush:style', 'ftpush:scripts'*/]);
+    grunt.registerTask('default', ['copy', 'jshint', 'less:dev', 'assemble', 'concat', 'ftpush:style', 'ftpush:image', 'ftpush:html', 'ftpush:scripts']);
 
     // Dev task
     grunt.registerTask('dev', ['default', 'connect', 'watch']);
-    grunt.registerTask('sprite', ['glue', /*'ftpush:sprite', */'less:dev'/*, 'ftpush:style'*/]);
+    grunt.registerTask('sprite', ['glue', 'ftpush:image','less:dev', 'ftpush:style']);
     grunt.registerTask('style', ['less:dev', 'concat:dev', 'ftpush:style']);
 
     // Deploy task
