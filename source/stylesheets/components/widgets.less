@@ -12,6 +12,15 @@
 	border-bottom: 1px solid @gray-lighter;
 	padding-bottom: @grid-gutter-width;
 
+	@media (min-width: @screen-md-min) {
+		margin-right: -@grid-gutter-width / 2;
+	}
+
+	@media (min-width: @screen-lg-min) {
+		margin-right: -@grid-gutter-width;
+	}
+
+
 	.btn{
 		.button-variant(#fff, @gray, @gray);
 		font-family: @font-family-slab;

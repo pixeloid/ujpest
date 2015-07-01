@@ -25,15 +25,23 @@ main{
 .l_content-primary{
 	.make-sm-column(8);
 	.make-md-column(9);
-	padding-left: @grid-gutter-width / 2;
+	// padding-left: @grid-gutter-width / 2;
 	border-right: 1px solid @gray-lighter;
 	padding-bottom: @grid-gutter-width;
 
-	.l_content-primary__bleed{
+	>.l_bleed{
 
 		margin-left: -@grid-gutter-width;
-
 		margin-right: -(@grid-gutter-width / 2);
+
+		@media (min-width: @screen-md-min) {
+			margin-left: -@grid-gutter-width / 2;
+		}
+		@media (min-width: @screen-lg-min) {
+			margin-left: -@grid-gutter-width;
+		}
+
+
 	}
 }
 
@@ -43,6 +51,15 @@ main{
 	.make-md-column(3);
 	padding-right: @grid-gutter-width / 2;
 	padding-bottom: @grid-gutter-width;
+
+
+	>.l_bleed{
+
+
+
+
+	}
+
 
 
 }

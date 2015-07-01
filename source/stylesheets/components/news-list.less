@@ -1,0 +1,13 @@
+.news-list{
+    &:extend(.row);
+
+    .news-list-col{
+        .make-md-column(4);
+        border-right: 1px solid @gray-lighter;
+
+        &.is-last{
+            border-right: none;
+        }
+    }
+}
+

@@ -279,6 +279,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['copy', 'jshint', 'less:dev', 'assemble', 'concat', 'ftpush:style', 'ftpush:image', 'ftpush:html', 'ftpush:scripts']);
 
     // Dev task
+    grunt.registerTask('serve', ['connect', 'watch']);
     grunt.registerTask('dev', ['default', 'connect', 'watch']);
     grunt.registerTask('sprite', ['glue', 'ftpush:image','less:dev', 'ftpush:style']);
     grunt.registerTask('style', ['less:dev', 'concat:dev', 'ftpush:style']);
