@@ -1,0 +1,65 @@
+---
+page_class: page-home
+---
+
+
+    <section class='l-content-primary'>
+      
+      <div class="l-container">
+
+
+        <div class='top-news'>
+          <div class='top-news-primary'>
+            {{> news-item news-item.hero}}
+            {{> news-item news-item.split}}
+            {{> news-item news-item.split-inverse}}
+            {{> news-item news-item.noimage}}
+            {{> news-item news-item.split}}
+            {{> news-item news-item.split-inverse}}
+            {{> news-item news-item.split}}
+            {{> news-item news-item.split-inverse}}
+          </div>
+          <div class='top-news-secondary'>
+            {{> news-item news-item}}
+            {{> news-item news-item}}
+            {{> news-item news-item.noimage}}
+            {{> news-item news-item}}
+            {{> news-item news-item}}
+            {{> news-item news-item.noimage}}
+          </div>
+        </div>
+
+        <div class='banner banner-728x90'>
+          <img src="img/samples/banner728x90.png">
+        </div>
+
+        <div class='news-list'>
+          <div class='news-list-col'>
+            {{> news-item news-item.noimage}}
+            {{> news-item news-item}}
+            {{> news-item news-item}}
+          </div>
+          <div class='news-list-col'>
+            {{> news-item news-item}}
+            {{> news-item news-item.noimage}}
+            {{> news-item news-item}}
+          </div>
+          <div class='news-list-col news-list-col is-last'>
+            {{> news-item news-item}}
+            {{> news-item news-item}}
+            {{> news-item news-item.noimage}}
+          </div>
+        </div>
+
+        <div class='banner banner-300x250'>
+          <img src="img/samples/banner300x250.png">
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <aside class='l-content-secondary'>
+        {{> sidebar}}
+    </aside>

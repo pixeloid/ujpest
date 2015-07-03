@@ -2,72 +2,120 @@
 page_class: page-home
 ---
 
-  <div class='row'>
-    <section class='l_content-primary'>
-      <div class='top-news'>
-        <div class='top-news-primary'>
-          {{> news-item news-item.hero}}
-          {{> news-item news-item.split}}
-          {{> news-item news-item.split-inverse}}
-          {{> news-item news-item.noimage}}
-          {{> news-item news-item.split}}
-          {{> news-item news-item.split-inverse}}
-          {{> news-item news-item.split}}
-          {{> news-item news-item.split-inverse}}
-        </div>
-        <div class='top-news-secondary'>
-          {{> news-item news-item}}
-          {{> news-item news-item}}
-          {{> news-item news-item.noimage}}
-          {{> news-item news-item}}
-          {{> news-item news-item}}
-          {{> news-item news-item.noimage}}
+
+    <div class='l-content-primary'>
+      <div class="l-container">
+        <div class='top-news'>
+          <div class='top-news-primary'>
+            {{> news-item news-item.hero}}
+            {{> news-item news-item.split}}
+            {{> news-item news-item.split-inverse}}
+            {{> news-item news-item.noimage}}
+            {{> news-item news-item.split}}
+            {{> news-item news-item.split-inverse}}
+            {{> news-item news-item.split}}
+            {{> news-item news-item.split-inverse}}
+          </div>
+          <div class='top-news-secondary'>
+            {{> news-item news-item}}
+            {{> news-item news-item}}
+            {{> news-item news-item.noimage}}
+            {{> news-item news-item}}
+            {{> news-item news-item}}
+            {{> news-item news-item.noimage}}
+          </div>
         </div>
       </div>
-      <div class="l_bleed">
+
+      <div class="l-container is-bleed">
         <div class='banner banner-728x90'>
           <img src="img/samples/banner728x90.png">
         </div>
       </div>
 
-      <div class='news-list'>
-        <div class='news-list-col'>
-          {{> news-item news-item.noimage}}
-          {{> news-item news-item}}
-          {{> news-item news-item}}
-        </div>
-        <div class='news-list-col'>
-          {{> news-item news-item}}
-          {{> news-item news-item.noimage}}
-          {{> news-item news-item}}
-        </div>
-        <div class='news-list-col news-list-col is-last'>
-          {{> news-item news-item}}
-          {{> news-item news-item}}
-          {{> news-item news-item.noimage}}
+      <div class="l-container">
+        <div class='news-list'>
+          <div class='news-list-col'>
+            {{> news-item news-item.noimage}}
+            {{> news-item news-item}}
+            {{> news-item news-item}}
+          </div>
+          <div class='news-list-col'>
+            {{> news-item news-item}}
+            {{> news-item news-item.noimage}}
+            {{> news-item news-item}}
+          </div>
+          <div class='news-list-col news-list-col is-last'>
+            {{> news-item news-item}}
+            {{> news-item news-item}}
+            {{> news-item news-item.noimage}}
+          </div>
         </div>
       </div>
 
-      <div class="l_bleed">
+      <div class="l-container is-bleed">
         <div class='banner banner-300x250'>
           <img src="img/samples/banner300x250.png">
         </div>
       </div>
 
-      <div class="l_content-primary l_bleed">
-        <h2 class="category-title category-title__cult">
-          Kultúra
-        </h2>
-      </div>
+      <section class="news-category-block is-sport">
+
+        <h2 class="l-container">Sport</h2>
+
+        <div class="l-container">
+          <div class='news-list'>
+            <div class='news-list-col'>
+              {{> news-item news-item.noimage}}
+              {{> news-item news-item}}
+              {{> news-item news-item}}
+            </div>
+            <div class='news-list-col'>
+              {{> news-item news-item}}
+              {{> news-item news-item.noimage}}
+              {{> news-item news-item}}
+            </div>
+            <div class='news-list-col news-list-col is-last'>
+              {{> news-item news-item}}
+              {{> news-item news-item}}
+              {{> news-item news-item.noimage}}
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="news-category-block is-cult">
+
+        <h2 class="l-container">Kultúra</h2>
+
+        <div class="l-container">
+          <div class='news-list'>
+            <div class='news-list-col'>
+              {{> news-item news-item.noimage}}
+              {{> news-item news-item}}
+              {{> news-item news-item}}
+            </div>
+            <div class='news-list-col'>
+              {{> news-item news-item}}
+              {{> news-item news-item.noimage}}
+              {{> news-item news-item}}
+            </div>
+            <div class='news-list-col news-list-col is-last'>
+              {{> news-item news-item}}
+              {{> news-item news-item}}
+              {{> news-item news-item.noimage}}
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {{> widget-thumb-links-bw}}
+
+    </div>
 
 
-
-    </section>
-
-
-    <aside class='l_content-secondary'>
-      
-      {{> sidebar}}
-
+    <aside class='l-content-secondary'>
+        {{> sidebar}}
     </aside>
-  </div>

@@ -1,4 +1,48 @@
 .widget-thumb-links{
+	
+	ul{
+		.list-unstyled;
+		list-style: none;
+		.make-row();
+
+		li{
+			.make-sm-column(3);
+
+			list-style: none;
+			a{
+				.thumbnail;
+
+				.is-bw&{
+					border: none;
+					.box-shadow(0 1px 2px lighten(@text-color, 90%));
+
+					img.color{
+						display: none;
+						// position: absolute;
+						// top: 0;
+						// left: 0;
+					}
 
 
+
+				}
+
+				&:hover{
+					.is-bw&{
+						img.color{
+							display: block;
+						}
+						img.mono{
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+
+	&.is-bw{
+		background: #f3f3f3;
+	}
 }

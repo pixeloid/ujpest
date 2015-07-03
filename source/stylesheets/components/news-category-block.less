@@ -1,0 +1,73 @@
+@news-category-sport-bg:  #e7e2f1;
+@news-category-sport-date-color:  #8f7d9c;
+
+@news-category-cult-bg:  #def0f3;
+@news-category-cult-date-color:  #54828b;
+
+.news-category-block{
+
+	.l-container{
+		.is-sport&{
+			background-color: @news-category-sport-bg;
+		}
+		.is-cult&{
+			background-color: @news-category-cult-bg;
+		}
+	}
+
+	h2{
+		color: #fff;
+		margin: 0;
+		height: 80px;
+		line-height: 80px;
+		font-size: 40px;
+		.is-sport&{
+			background: blue url(../img/bg_category_title_sport_lg.png) no-repeat 0 0;
+			font-family: 'ChunkFive', sans-serif;
+		}
+		.is-cult&{
+			background: blue url(../img/bg_category_title_cult_lg.png) no-repeat 0 0;
+			font-family: 'Libre Baskerville', sans-serif;
+			text-transform: none;
+		}
+	}
+
+	.news-item{
+		.news-item-text{
+			aside{
+
+				.is-sport&{
+					background-color: @news-category-sport-bg;
+					color: @news-category-sport-date-color;
+				}
+				.is-cult&{
+					background-color: @news-category-cult-bg;
+					color: @news-category-cult-date-color;
+
+				}
+
+				.news-item-category{
+					display: none;
+				}
+
+			}
+
+			header{
+				h3{
+					.is-sport&{
+						background: @news-category-sport-bg;
+						box-shadow: 0.5em 0 0 @news-category-sport-bg, -0.5em 0 0 @news-category-sport-bg;
+					}
+					.is-cult&{
+						background: @news-category-cult-bg;
+						box-shadow: 0.5em 0 0 @news-category-cult-bg, -0.5em 0 0 @news-category-cult-bg;
+
+					}
+
+				}
+			}
+
+		}
+	}
+
+}
